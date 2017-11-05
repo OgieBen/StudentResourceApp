@@ -11,12 +11,15 @@ import { AppComponent } from './app.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { DataService } from './data.service';
+import { CreateStudentResourceComponent } from './create-student-resource/create-student-resource.component';
 import { ViewResourcesComponent } from './view-resources/view-resources.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewResourcesComponent
+    ViewResourcesComponent,
+    CreateStudentResourceComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -29,8 +32,12 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
         component: ViewResourcesComponent
       },
       {
+        path: 'resource',
+        component: CreateStudentResourceComponent
+      },
+      {
         path: '',
-        redirectTo: '/resources',
+        redirectTo: '/resource',
         pathMatch: 'full'
       }
     ]),

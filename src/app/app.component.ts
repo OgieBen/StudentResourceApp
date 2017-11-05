@@ -19,7 +19,7 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
   // templateUrl: './app.component.html',
   template: `
 
-    <a routerLink='/resources'>Test</a> 
+    <a routerLink='/resource'>Test</a> 
     <router-outlet></router-outlet>
 
   `,

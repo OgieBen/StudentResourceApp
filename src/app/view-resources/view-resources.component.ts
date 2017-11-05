@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   selector: 'app-view-resources',
   //templateUrl: './view-resources.component.html',
   template: `
-  
+
 <div class="wrapper">
 
   <div class="screen">

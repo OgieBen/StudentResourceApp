@@ -1,22 +1,32 @@
-<form action="localhost:8080/student" method="post">
+<div class="screen">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content">
 
-  <input class="" name="studentResourceName" type="text" placeholder="Enter the name of the resource" />
+        <form class="col-xs-12 col-sm-6 col-md-6 col-lg-6 form-pane" action="localhost:8080/student" method="post">
 
-  <textarea class="" name="resource"></textarea>
+          <input class="col-xs-12 col-sm-11 col-md-11 col-lg-11 title-input" name="studentResourceName" type="text" placeholder="Enter the name of the resource"
+          />
+          <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 editor-wrapper dim-shadow">
+            <textarea class="col-xs-12 col-sm-12 col-md-12 col-lg-12 editor " name="resource"></textarea>
+          </div>
+          <button class="col-lg-11 publish-button dim-shadow" (click)='publish()'>Publish</button>
+          <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content detail-container ">
+          <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-12 detail-wrapper">
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content detail-container ">
-    <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-12 detail-wrapper">
+            <div class="col-xs-9 col-sm-9 col-md-6 col-lg-2 dim-shadow detail-view">
 
-      <div class="col-xs-9 col-sm-9 col-md-6 col-lg-2 dim-shadow detail-view">
+            </div>
+            <div class="col-xs-9 col-sm-9 col-md-6 col-lg-2 dim-shadow detail-view">
 
-      </div>
-      <div class="col-xs-9 col-sm-9 col-md-6 col-lg-2 dim-shadow detail-view">
+            </div>
+          </div>
 
+
+        </div> -->
+
+        </form>
       </div>
     </div>
-
-    
   </div>
-
-</form>
-
+</div>
