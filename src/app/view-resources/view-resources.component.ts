@@ -55,7 +55,7 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getStudentsFromWeb();
+    this.getResourcesFromWeb();
   }
 
 
@@ -63,7 +63,7 @@ export class ViewResourcesComponent implements OnInit {
    * Get's data from @class data.service.ts
    * @returns void
    */
-  public getStudentsFromWeb(): void {
+  public getResourcesFromWeb(): void {
 
     this.tempStudents = this.dataService
       .getStudentsFromWeb().then(data => {

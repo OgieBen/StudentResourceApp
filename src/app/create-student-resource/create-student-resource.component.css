@@ -130,10 +130,16 @@ body {
 	padding: 8px
 }
 
+.input-box{
+	margin-bottom: 10px;
+	height: auto;
+}
 
 .title-input{
 	height: 40px;
-	margin-bottom: 10px;
+	font-size: 14px;
+	padding: 2px;
+	margin: 10px;
 	appearance: none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
@@ -141,14 +147,15 @@ body {
 	outline: none;
 	background-color: transparent;
 	border: 0px;
-	color: rgba(31, 204, 201,0.4);
-	border-bottom: 1px solid #e7e5e5;
+	color: #c5c5c5;
+	border-bottom: 1px solid #7e7e7e;
 }
 
 .form-pane{
 
 	height: 100%;
 	padding-top: 50px;
+	
 }
 
 .editor{
@@ -159,7 +166,7 @@ body {
 	-ms-progress-appearance: none;
 	outline: none;
 	border: 0px solid transparent;
-	background: transparent;
+		background: transparent;
 	color: black;
 }
 
@@ -172,7 +179,7 @@ body {
 	-ms-progress-appearance: none;
 	outline: none;
 	overflow-y: hidden;
-	border: 1px solid #0007ff;
+//	border: 1px solid #0007ff;
 	background-color: rgba(201, 201, 201, 0.5);
 }
 
@@ -185,7 +192,7 @@ body {
 	border: 1px solid white;
 	color: white;
 	border-radius: 3px;
-	background-color: #0007ff;
+	background-color: #294E80;
 	float: right;
 }
 

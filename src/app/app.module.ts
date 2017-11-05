@@ -13,18 +13,24 @@ import { environment } from '../environments/environment';
 import { DataService } from './data.service';
 import { CreateStudentResourceComponent } from './create-student-resource/create-student-resource.component';
 import { ViewResourcesComponent } from './view-resources/view-resources.component';
+import { FormsModule} from '@angular/forms';
+import { AddStudentComponent } from './add-student/add-student.component';
+import { ViewStudentsComponent } from './view-students/view-students.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewResourcesComponent,
     CreateStudentResourceComponent,
-
-  ],
+    AddStudentComponent,
+    ViewStudentsComponent
+],
   imports: [
     BrowserModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       {
@@ -34,6 +40,10 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
       {
         path: 'resource',
         component: CreateStudentResourceComponent
+      },
+      {
+        path: 'student',
+        component: AddStudentComponent
       },
       {
         path: '',

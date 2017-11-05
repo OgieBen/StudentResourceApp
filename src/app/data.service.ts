@@ -13,7 +13,11 @@ export class DataService {
     constructor(private http: Http) { }
 
     /* studentUrl = 'http://localhost:8080/students';*/
-    studentUrl = 'http://localhost:8080/resources';
+    private studentUrl = 'http://localhost:8080/resources';
+    private createResouceUrl = 'http://localhost:8080/student/resource';
+    private addStudentUrl = 'http://localhost:8080/student';
+  
+    private headers = new Headers({'Content-Type': 'application/json'});
 
     /**
      * Pull data from sever.
@@ -38,8 +42,32 @@ export class DataService {
      */
     private errorHandler(error: any): Promise<any> {
 
-        console.error('Error trying to get students: ', error);
+     //   console.error('Error in service: ', error);
+        console.log('Error in service: ', error);
 
         return Promise.reject(error.message || error);
+    }
+
+
+
+    createResource(title: string, body: string): Promise<Resource> {
+
+      const payload: Resource = { title: title, body: body };
+
+      return  this.http
+            .post(this.createResouceUrl, JSON.stringify(payload), {headers: this.headers})
+            .toPromise()
+            .then(res => res.json().data as Resource)
+            .catch(this.errorHandler);
+    }
+
+    addStudent(name: string, email: string): Promise<Student> {
+    const payload: Student = { name: name, email: email };
+
+              return  this.http
+                    .post(this.addStudentUrl, JSON.stringify(payload), {headers: this.headers})
+                    .toPromise()
+                    .then(res => res.json().data as Student)
+                    .catch(this.errorHandler);
     }
 }

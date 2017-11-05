@@ -1,0 +1,54 @@
+<div class="screen">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content">
+
+        <form #resourceForm="ngForm" 
+        (ngSubmit)="addStudent(name.value, email.value)" 
+        class="col-xs-12 col-sm-6 col-md-6 col-lg-6  form-pane">
+
+
+          <input [(ngModel)]="innerName" #name name="name" 
+          class="col-xs-12 col-sm-11 col-md-11 col-lg-5 title-input" 
+          type="text" placeholder="Student's full name"
+          />
+
+
+          <input [(ngModel)]="innerEmail" #email name="email" class="col-xs-12 col-sm-11 col-md-11 col-lg-6 title-input" type="email"
+            placeholder="Enter the email of student" />
+
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  submit">
+            <button type="submit" class=" btn btn-lg publish-button dim-shadow">Add Student</button>
+
+          </div>
+          <!-- 
+          
+
+          <div class="form-group">
+
+          </div>
+          <div class="form-group">
+
+          </div> -->
+
+
+          <!-- <button type="submit" class="col-xs-6 col-sm-6 col-md-4 col-lg-3 publish-button dim-shadow">Add Student</button> -->
+          <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content detail-container ">
+            <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-12 detail-wrapper">
+  
+              <div class="col-xs-9 col-sm-9 col-md-6 col-lg-2 dim-shadow detail-view">
+  
+              </div>
+              <div class="col-xs-9 col-sm-9 col-md-6 col-lg-2 dim-shadow detail-view">
+  
+              </div>
+            </div>
+  
+  
+          </div> -->
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

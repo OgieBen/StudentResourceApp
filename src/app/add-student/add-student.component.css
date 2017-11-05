@@ -1,0 +1,93 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+
+* {
+	transition: all 0.3s ease-out;
+}
+
+
+
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(205, 205, 205, 0.4); // width:8px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.screen {
+	height: 100%;
+	width: 100%;
+	background-color: rgba(201, 201, 201, 0.06);
+	/*	background-color: black;*/
+	float: left;
+	background-image: url('/assets/images/background-image.jpeg');
+    background-position: center;
+	background-size: cover, contain;
+	background-repeat: no-repeat;
+
+}
+
+.dim-shadow {
+	box-shadow: 2px 1px 10px 1px rgba(205, 205, 205, 0.8);
+}
+
+.centralize-content {
+	align-content: center;
+	display: flex;
+	justify-content: center;
+}
+
+
+
+.title-input{
+	height: 40px;
+	margin-bottom: 10px;
+    appearance: none;
+   float:left;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	-ms-progress-appearance: none;
+	outline: none;
+	background-color: transparent;
+	border: 0px solid black;
+	color: rgba(104, 105, 105, 0.4);
+    border-bottom: 1px solid #7e7e7e;
+    margin: 6px;
+    font-size: 12px;
+}
+
+.form-pane{
+
+    height: 100%;
+    float: left;
+    padding-top: 50px;
+   // background-color: gray;
+  // border: 3px solid black;
+}
+
+.submit{
+    height:auto ;
+}
+
+
+.publish-button{
+	border: 1px solid white;
+	color: white;
+    border-radius: 3px;
+    margin-top: 30px;
+	background-color: #294E80;
+	float: right;
+}
+
+
