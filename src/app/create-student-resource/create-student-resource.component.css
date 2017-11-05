@@ -1,0 +1,147 @@
+* {
+	transition: all 0.3s ease-out;
+}
+
+
+
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(205, 205, 205, 0.4); // width:8px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+	/*	background-color: black;*/
+	float: left;
+
+}
+
+.screen {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	/*	background-color: black;*/
+	float: left;
+}
+
+.dim-shadow {
+	box-shadow: 2px 1px 10px 1px rgba(205, 205, 205, 0.8);
+}
+
+.header {
+	height: 10%;
+	background-color: black;
+	/*	background-color: #c3cdcd;*/
+}
+
+
+.header .brand {
+	height: 20px;
+
+}
+
+.header .brand > p {
+	text-align: left;
+	font-size: 20px;
+	padding: 25px;
+	color: white;
+	font-family: monospace;
+}
+
+.centralize-content {
+	align-content: center;
+	display: flex;
+	justify-content: center;
+}
+
+
+.master-container {
+	height: 70px;
+	float: left;
+	width: 100%; //min-height: 100px;
+	padding-top: 10px;
+	/*	margin-top: 30px;*/
+	background-color: white;
+}
+
+.view-student-btn {
+	background-color: transparent;
+}
+
+.detail-container {
+	height: 500px;
+	float: left;
+	padding: 0px;
+	width: 100%; //min-height: 100px;
+	padding-top: 10px;
+	/* 	margin-top: 30px;*/
+	background-color: transparent;
+}
+
+.detail-view {
+	/*	float: left;*/
+	height: 200px;
+	background-color: white;
+	padding: 0px;
+	margin: 8px;
+	margin-left: 45px;
+	/*	box-shadow: 1px 1px 0px 1px rgba(205, 205, 205, 0.5);*/
+}
+
+.detail-wrapper {
+	height: auto;
+	/*	background-color: black;*/
+	overflow-y: scroll;
+}
+
+.master-view {
+	height: 50px;
+	/*	background-color: rgba(139, 0, 139, 0.7);*/
+	/*	border: 1px solid #c4c4c4;*/
+	border-radius: 2px;
+	padding: 8px
+}
+
+.tool-bar {
+	background-color: black;
+}
+
+.master-container > .master-view > ul {
+	float: left;
+	height: 50px;
+}
+
+
+.master-container > .master-view > ul > li {
+
+	height: 30px;
+	width: auto;
+	/*	background-color: orange;*/
+	float: left; //padding: 8px;
+	list-style: none;
+}
+
+.master-container > .master-view > ul > li button {
+	margin: 4px;
+}
