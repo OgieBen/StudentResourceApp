@@ -89,6 +89,20 @@
 }
 
 
+.nav-tab{
+	height: 30px;
+	background-color: rgba(218, 212, 212, 0.3);
+	
+}
+
+.nav-tab > nav > a {
+	color: #004;
+	text-decoration: none;
+}
+.nav-tab > nav > a + a {
+margin: 20px;
+}
+
 .detail-view-2 {
 	
 		height: 200px;

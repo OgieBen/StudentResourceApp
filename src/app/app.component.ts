@@ -16,26 +16,7 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
 
 @Component({
   selector: 'app-root',
-  // templateUrl: './app.component.html',
-  template: `
-
-    <a routerLink='/resource'>Test</a> 
-    <router-outlet></router-outlet>
-
-  `,
-
-
-  /* <ul *ngFor = "let student of students " >
-  
-       <li>Title: {{student.title}} </li>
-       <li>Body: {{student.body}} </li>
-     </ul>   */
-  /* <ul *ngFor = "let resource of collection | async" >
-       <li>{{resource.email}}</li>
-     </ul> */
-
-
-
+   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {

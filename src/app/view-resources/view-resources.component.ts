@@ -13,13 +13,6 @@ import { HttpClient } from '@angular/common/http';
 
   <div class="screen">
 
-
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header shadow-raised">
-        <div class=" col-xs-12 col-sm-6 col-md-4 col-lg-4 brand">
-          <p>Student Resource App Track App</p>
-        </div>
-      </div>
-
       <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 detail-wrapper">
        <div class="row">
           <div class="col-xs-9 col-sm-4 col-md-4 col-lg-2 dim-shadow detail-view"  *ngFor ="let resource of resources"  >
