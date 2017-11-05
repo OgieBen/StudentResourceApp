@@ -1,6 +1,6 @@
 # StudentResourceAPP
 
-A very simple App that allows the user create a student resource.
+A very simple App built on AngularJs that allows a user to create a simple student resource.
 
 ## Development server
 
