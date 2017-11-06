@@ -6,8 +6,10 @@ const path = require('path');
 app.use(express.static(__dirname+'/dist'));
 // Start the app by listening on the default
 // Heroku port
-app.listen(process.env.PORT || 8080, function(){
-    console.log("Server started at port 8080");
+
+var port = 6010;
+app.listen(process.env.PORT || port, function(){
+    console.log("Server started at port "+ port);
 });
 
 // var val = path.join( __dirname+'/dist/index.html');
