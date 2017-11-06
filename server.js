@@ -7,13 +7,13 @@ const path = require('path');
 
 // Run the app by serving the static files
 // in the dist directory
-app.use(express.static(__dirname+'/dist'));
+//app.use(express.static(__dirname+'/dist'));
 
 // If an incoming request uses
 // a protocol other than HTTPS,
 // redirect that request to the
 // same url but with HTTPS
-const forceSSL = function() {
+/* const forceSSL = function() {
   return function (req, res, next) {
     if (req.headers['x-forwarded-proto'] !== 'https') {
       return res.redirect(
@@ -32,7 +32,7 @@ const forceSSL = function() {
 // Instruct the app
 // to use the forceSSL
 // middleware
-app.use(forceSSL());
+app.use(forceSSL()); */
 
 // Start the app by listening on the default
 // Heroku port

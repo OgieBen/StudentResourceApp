@@ -51,7 +51,7 @@ import { ViewStudentsComponent } from './view-students/view-students.component';
       },
       {
         path: '',
-        redirectTo: '/resource',
+        redirectTo: '/resources',
         pathMatch: 'full'
       }
     ]),
