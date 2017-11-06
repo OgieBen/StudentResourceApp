@@ -46,6 +46,10 @@ import { ViewStudentsComponent } from './view-students/view-students.component';
         component: AddStudentComponent
       },
       {
+        path: 'students',
+        component: ViewStudentsComponent
+      },
+      {
         path: '',
         redirectTo: '/resource',
         pathMatch: 'full'

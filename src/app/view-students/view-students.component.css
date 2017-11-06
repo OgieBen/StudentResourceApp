@@ -1,0 +1,253 @@
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+* {
+	transition: all 0.3s ease-out;
+}
+
+
+
+::-webkit-scrollbar {
+	width: 8px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
+	border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(205, 205, 205, 0.4); // width:8px;
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+.wrapper {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	float: left;
+
+}
+
+.screen {
+	height: 100%;
+	width: 100%;
+	background-color: white;
+    float: left;
+    background-image: url('/assets/images/background-image.jpeg');
+    background-position: center;
+	background-size: cover, contain;
+	background-repeat: no-repeat;
+
+}
+.welcome-note{
+    text-align: center;
+    font-size: 50px;
+}
+
+.shadow-raised {
+	box-shadow: 5px 0px 20px 1px rgba(205, 205, 205, 0.8);
+}
+.dim-shadow {
+	box-shadow: 2px 1px 10px 1px rgba(205, 205, 205, 0.8);
+}
+
+.header {
+	height: 10%;
+	background-color: #004;
+    /*	background-color: #;*/
+    margin: 0px;
+    padding:0px;
+}
+
+
+.header .brand {
+    height: 100%;
+    font-family: 'Saira Extra Condensed', sans-serif;
+
+}
+
+.header .brand > p {
+	text-align: left;
+	font-size: 20px;
+	padding: 25px;
+	color: white;
+    font-family: monospace;
+    font-family: 'Saira Extra Condensed', sans-serif;
+}
+
+.centralize-content {
+	align-content: center;
+	display: flex;
+	justify-content: center;
+}
+
+
+.detail-view-2 {
+	
+		height: 200px;
+		background-color: white;
+		border: 1px solid #007FFF;
+		padding: 0px;
+		margin: 8px;
+		border-radius: 4px;
+}
+	
+.detail-wrapper {
+		height: auto;
+		/*	background-color: black;*/
+		overflow-y: scroll;
+}
+	
+.resource-title {
+		color: white;
+		text-align: center;
+}
+	
+.resource-title-box {
+	height: 140px;
+	background-color: #004;
+	padding: 0px;
+	border-radius: 0px 0px 0px 0px;
+	margin: 0px; //	border: 1px solid #007FFF;
+	font-size: 20px;
+	font-family: monospace;
+	color: #007fff;
+	padding-top: 60px;
+}
+
+.author-name {
+	text-align: center;
+	padding-top: 20px;
+	font-size: 10px;
+	font-weight: bolder;
+	color: #005;
+}
+
+.author-box {
+	height: inherit;
+	background-color:transparent;
+}
+
+.resource-bottom-bar {
+	height: 50px;
+	background-color: #007fff;
+	border-radius: 0px 0px 4px 4px;
+
+}
+
+
+.resource-bottom-box {
+	//padding: 0px;
+	height: 58px;
+	background-color: transparent;
+
+}
+
+.mini {
+	height: inherit;
+}
+
+
+.no-padding {
+	padding: 0px;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
+.author-name {
+	text-align: center;
+	padding-top: 20px;
+	font-size: 10px;
+	font-weight: bolder;
+	color: #005;
+}
+
+
+
+
+.master-container {
+	height: 70px;
+	float: left;
+	width: 100%; //min-height: 100px;
+	padding-top: 10px;
+	/*	margin-top: 30px;*/
+	background-color: transparent;
+}
+
+.view-student-btn {
+    background-color: transparent;
+    border: 1px solid #f2f4f4;
+    color:  #1883ba;
+    border: 1px solid #1883ba;
+}
+
+.detail-container {
+	height: 500px;
+	float: left;
+	padding: 0px;
+	width: 100%; //min-height: 100px;
+	padding-top: 10px;
+	/* 	margin-top: 30px;*/
+	background-color: transparent;
+}
+
+.detail-view {
+	/*	float: left;*/
+	height: 200px;
+	background-color: white;
+	padding: 0px;
+	margin: 8px;
+	/* margin-left: 45px; */
+	/*	box-shadow: 1px 1px 0px 1px rgba(205, 205, 205, 0.5);*/
+}
+.detail-view > p{
+    text-align: center;
+    padding: 10px;
+	font-size: 20px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+.detail-wrapper {
+	height: auto;
+	/*	background-color: black;*/
+	overflow-y: scroll;
+}
+
+.master-view {
+	height: 50px;
+	/*	background-color: rgba(139, 0, 139, 0.7);*/
+	/*	border: 1px solid #c4c4c4;*/
+	border-radius: 2px;
+	padding: 8px
+}
+
+.tool-bar {
+	background-color: black;
+}
+
+.master-container > .master-view > ul {
+	float: left;
+	height: 50px;
+}
+
+
+.master-container > .master-view > ul > li {
+
+	height: 30px;
+	width: auto;
+	/*	background-color: orange;*/
+	float: left; //padding: 8px;
+	list-style: none;
+}
+
+.master-container > .master-view > ul > li button {
+	margin: 4px;
+}
