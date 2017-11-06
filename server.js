@@ -39,13 +39,13 @@ app.use(forceSSL()); */
 
  var val = path.join( __dirname+'/dist/index.html');
 app.get('/*', function(req, res) {
-  res.json({
+ /*  res.json({
     path: path.resolve(val)
-  });
-  // res.sendFile(path.join(__dirname+'/dist/index.html'));
+  }); */
+  res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
-var port = 5911;
+var port = 5910;
 app.listen(process.env.PORT || port, function(){
     console.log("Server started at port "+ port);
 });
