@@ -16,7 +16,7 @@ app.get('/*', function(req, res) {
   // res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
-var port = 6010;
+var port = 5911;
 app.listen(process.env.PORT || port, function(){
     console.log("Server started at port "+ port);
 });
