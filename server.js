@@ -14,10 +14,10 @@ app.listen(process.env.PORT || port, function(){
 
 // var val = path.join( __dirname+'/dist/index.html');
 app.get('/*', function(req, res) {
-   /*  res.json({
+    res.json({
         path: val
-    }); */
-    res.sendFile(path.join(__dirname+'/dist/index.html'));
+    });
+    // res.sendFile(path.join(__dirname+'/dist/index.html'));
   });
 
 
