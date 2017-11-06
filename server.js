@@ -40,7 +40,7 @@ app.use(forceSSL()); */
  var val = path.join( __dirname+'/dist/index.html');
 app.get('/*', function(req, res) {
   res.json({
-    path: val
+    path: path.resolve(val)
   });
   // res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
