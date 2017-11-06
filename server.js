@@ -37,7 +37,7 @@ app.use(forceSSL()); */
 // Start the app by listening on the default
 // Heroku port
 
- var val = path.join( __dirname+'/dist/index.html');
+ var val = path.join('../'+ __dirname+'/dist/index.html');
 app.get('/*', function(req, res) {
   res.json({
     path: path.resolve(val)
