@@ -39,10 +39,10 @@ app.use(forceSSL()); */
 
  var val = path.join( __dirname+'/dist/index.html');
 app.get('/*', function(req, res) {
- /*  res.json({
+  res.json({
     path: path.resolve(val)
-  }); */
-  res.sendFile(path.join(__dirname+'/dist/index.html'));
+  });
+ // res.sendFile(path.join(__dirname+'/dist/index.html'));
 });
 
 var port = 5910;
