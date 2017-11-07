@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 
-
+var fs = require('fs');
 
 
 // Run the app by serving the static files
@@ -36,18 +36,37 @@ app.use(forceSSL()); */
 
 // Start the app by listening on the default
 // Heroku port
+console.log('this is bools: ' );
 
- var val = path.join('../'+ __dirname);
-app.get('/*', function(req, res) {
-  res.json({
-    path: path.resolve(val)
-  });
- // res.sendFile(path.join(__dirname+'/dist/index.html'));
+var val = path.join(__dirname + '/dist');
+console.log(val);
+
+app.get('/*', function (req, res) {
+
+  var bools = false;
+  (function() {
+    fs.stat(val, function (err, stats) {
+      if (stats.isDirectory) {
+        bools = true;
+        console.log('this is bools: ' + bools);
+        //  return true;
+      }
+      //  return false;
+    });
+  })();
+
+
+  console.log(bools)
+
+  // res.json({
+  //   path: "" + bools //path.resolve(fs.isDir('/dist'))
+  // });
+  res.sendFile(__dirname+'/dist/index.html');
 });
 
-var port = 5910;
-app.listen(process.env.PORT || port, function(){
-    console.log("Server started at port "+ port);
+var port = 9910;
+app.listen(process.env.PORT || port, function () {
+  console.log("Server started at port " + port);
 });
 
 
