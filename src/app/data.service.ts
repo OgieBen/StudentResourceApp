@@ -12,8 +12,11 @@ export class DataService {
 
     constructor(private http: Http) { }
 
-    
    
+    private rUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
+    private cUrl = 'https://warm-ocean-18911.herokuapp.com/resource';
+    private aUrl = 'https://warm-ocean-18911.herokuapp.com/student';
+    private sUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
