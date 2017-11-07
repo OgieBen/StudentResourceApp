@@ -6,7 +6,7 @@ var fs = require('fs');
 
 app.use(express.static(path.resolve(__dirname+'/dist')));
 var port = 9910;
-app.listen(process.env.PORT || pot, () => 
+app.listen(process.env.PORT || port, () => 
     {
         console.log('Server started at port: ' + port )
     }
