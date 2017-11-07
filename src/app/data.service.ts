@@ -19,7 +19,7 @@ export class DataService {
     private studentsUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
-
+    //
     /**
      * Pull data from sever.
      * @returns Promise<Student[]>
