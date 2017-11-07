@@ -13,10 +13,10 @@ export class DataService {
     constructor(private http: Http) { }
 
     /* studentUrl = 'http://localhost:8080/students';*/
-    private resourcesUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
-    private createResouceUrl = 'https://warm-ocean-18911.herokuapp.com/resource';
-    private addStudentUrl = 'https://warm-ocean-18911.herokuapp.com/student';
-    private studentsUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
+    private rUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
+    private cUrl = 'https://warm-ocean-18911.herokuapp.com/resource';
+    private aUrl = 'https://warm-ocean-18911.herokuapp.com/student';
+    private sUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
@@ -27,7 +27,7 @@ export class DataService {
     getResourcesFromWeb(): Promise<Student[]> {
 
         return this.http
-            .get(this.resourcesUrl)
+            .get(this.rUrl)
             .toPromise()
             .then(res =>
                 res.json() as Student[])
@@ -42,7 +42,7 @@ export class DataService {
     getStudentsFromWeb(): Promise<Student[]> {
 
         return this.http
-            .get(this.studentsUrl)
+            .get(this.sUrl)
             .toPromise()
             .then(res =>
                 res.json() as Student[])
@@ -71,7 +71,7 @@ export class DataService {
         const payload: Resource = { title: title, body: body };
 
         return this.http
-            .post(this.createResouceUrl, JSON.stringify(payload), { headers: this.headers })
+            .post(this.cUrl, JSON.stringify(payload), { headers: this.headers })
             .toPromise()
             .then(res => res.json().data as Resource)
             .catch(this.errorHandler);
@@ -81,7 +81,7 @@ export class DataService {
         const payload: Student = { name: name, email: email };
 
         return this.http
-            .post(this.addStudentUrl, JSON.stringify(payload), { headers: this.headers })
+            .post(this.aUrl, JSON.stringify(payload), { headers: this.headers })
             .toPromise()
             .then(res => res.json().data as Student)
             .catch(this.errorHandler);
