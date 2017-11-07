@@ -12,7 +12,7 @@ export class DataService {
 
     constructor(private http: Http) { }
 
-    /* studentUrl = 'http://localhost:8080/students';*/
+    
    
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
