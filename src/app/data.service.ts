@@ -13,10 +13,10 @@ export class DataService {
     constructor(private http: Http) { }
 
     /* studentUrl = 'http://localhost:8080/students';*/
-    private resourcesUrl = 'http://localhost:8080/resources';
-    private createResouceUrl = 'http://localhost:8080/student/resource';
-    private addStudentUrl = 'http://localhost:8080/student';
-    private studentsUrl = 'http://localhost:8080/students';
+    private resourcesUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
+    private createResouceUrl = 'https://warm-ocean-18911.herokuapp.com/resource';
+    private addStudentUrl = 'https://warm-ocean-18911.herokuapp.com/student';
+    private studentsUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
 
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
