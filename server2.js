@@ -4,7 +4,7 @@ var path = require('path');
 var fs = require('fs');
 
 
-app.use(express.static(path.resolve(__dirname+'/dist/index.html')));
+app.use(express.static(path.resolve(__dirname+'/dist')));
 var port = 5000;
 app.listen(process.env.PORT || 5000, () => 
     {
