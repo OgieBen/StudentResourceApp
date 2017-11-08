@@ -1,0 +1,52 @@
+<div class="wrapper">
+
+    <div class="screen">
+
+
+        <div class="loader-position centralize-vertical centralize-content" [class.display-loader]="!loader">
+
+            <i class="fa fa-spinner fa-spin" style="font-size:62px; color: #004;"></i>
+            <!-- <i class="fa fa-circle-o-notch fa-spin" style="font-size:62px; color: #004;"></i> -->
+
+        </div>
+
+        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 detail-wrapper">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-9 col-sm-4 col-md-4 col-lg-2 dim-shadow detail-view" *ngFor="let resource of resources">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-title-box">
+                            <!-- <div class="no-padding delete-button-wrapper ">
+                                <!-- <img [src]="deleteIcon" width="20" height="20" class="delete-button "/> -->
+                                <!-- add the delete button -->
+                                <!-- <button ></button> 
+                            </div> -->
+                            <p class="resource-title">{{resource.title}}</p>
+                        </div>
+
+                        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-bottom-box no-padding">
+
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 author-box no-padding">
+                                <!-- <div class="container"> -->
+                                <!-- <div class="row"> -->
+                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding  ">
+                                    <!-- <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">Author: Ogie Ben</p> -->
+                                    <img [src]="infoIcon" width="30" height="30" class="info-button " />
+                                    <img [src]="deleteIcon" width="30" height="30" class="delete-button " />
+                                </div>
+
+                                <!-- </div> -->
+                                <!-- </div> -->
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

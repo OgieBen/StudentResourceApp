@@ -109,6 +109,7 @@
 .resource-title {
 		color: white;
 		text-align: center;
+		padding-top: 60px;
 }
 	
 .resource-title-box {
@@ -120,7 +121,7 @@
 	font-size: 20px;
 	font-family: monospace;
 	color: #007fff;
-	padding-top: 60px;
+	padding-top: 0px;
 }
 
 .author-name {
@@ -155,6 +156,10 @@
 	height: inherit;
 }
 
+.mini-pane{
+	height: 20px;
+	background-color: transparent;
+}
 
 .no-padding {
 	padding: 0px;
@@ -268,5 +273,25 @@
 .centralize-vertical{
    /*  display: table-cell;
     vertical-align: middle; */
-    //margin-top: 25%;
+}
+
+.delete-button{
+	margin-top: 10px;
+	margin-right: 10px;
+	float: right;
+}
+
+.info-button{
+	margin-top: 10px;
+	float: left;
+	margin-left: 10px;
+}
+
+.delete-button-wrapper{
+	position: relative;
+	background-color: black;
+	float: right;
+	
+	height: 40px;
+	width:40px;
 }

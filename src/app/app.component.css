@@ -268,3 +268,28 @@ margin: 20px;
 }
 
 
+
+@media (max-width: 600px){
+	.no-toolbar{
+		display: none;
+	}
+
+	.toggle-box{
+		display: block;
+		height: 50px;
+		background-color: red;
+	}
+
+	.toggle{
+		width: 48px;
+		height: 48px;
+		background-image: url('/asset/images/menu.png ');
+		background-position: center;
+		background-size: cover, contain;
+		background-repeat: no-repeat;
+		float: right;
+
+	}
+}
+
+
