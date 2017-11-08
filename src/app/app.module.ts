@@ -16,6 +16,8 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
 import { FormsModule} from '@angular/forms';
 import { AddStudentComponent } from './add-student/add-student.component';
 import { ViewStudentsComponent } from './view-students/view-students.component';
+import { ReadResourceComponent } from './read-resource/read-resource.component';
+import { ReadResourceChildComponent } from './read-resource-child/read-resource-child.component';
 
 
 @NgModule({
@@ -25,6 +27,9 @@ import { ViewStudentsComponent } from './view-students/view-students.component';
     CreateStudentResourceComponent,
     AddStudentComponent,
     ViewStudentsComponent
+,
+    ReadResourceComponent,
+    ReadResourceChildComponent
 ],
   imports: [
     BrowserModule,
@@ -40,6 +45,10 @@ import { ViewStudentsComponent } from './view-students/view-students.component';
       {
         path: 'resource',
         component: CreateStudentResourceComponent
+      },
+      {
+        path: 'read',
+        component: ReadResourceComponent
       },
       {
         path: 'students',

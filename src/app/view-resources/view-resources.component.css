@@ -44,7 +44,7 @@
     background-position: center;
 	background-size: cover, contain;
 	background-repeat: no-repeat;
-	
+
 
 }
 .welcome-note{
@@ -250,4 +250,23 @@
 
 .master-container > .master-view > ul > li button {
 	margin: 4px;
+}
+
+.display-loader{
+    display: none;
+   
+}
+.loader-position{
+
+    width: 100%;
+    position:absolute;
+    margin-top: 10%;
+    z-index: 10;
+    
+}
+
+.centralize-vertical{
+   /*  display: table-cell;
+    vertical-align: middle; */
+    //margin-top: 25%;
 }

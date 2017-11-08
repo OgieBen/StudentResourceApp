@@ -91,3 +91,22 @@
 }
 
 
+
+.display-loader{
+    display: none;
+   
+}
+.loader-position{
+
+    width: 100%;
+    position:absolute;
+    margin-top: 50%;
+    z-index: 10;
+    
+}
+
+.centralize-vertical{
+   /*  display: table-cell;
+    vertical-align: middle; */
+    margin-top: 25%;
+}

@@ -10,7 +10,7 @@ export class AddStudentComponent implements OnInit {
 
   @Input() innerName: string;
   @Input() innerEmail: string;
-
+  loader = false;
 
   constructor(private dataService: DataService) { }
 
@@ -20,10 +20,19 @@ export class AddStudentComponent implements OnInit {
 
   addStudent(name: string, email: string): void {
 
+    
     if (name && email) {
-      this.dataService.addStudent(name, email).then((data) =>
-        console.log('Response data: ' + data)
-      ).catch(error => console.error(error));
+      this.loader = true;
+      this.dataService.addStudent(name, email).then((data) => {
+        console.log('Response data: ' + data);
+        this.loader = false;
+        this.innerName = '';
+        this.innerEmail = '';
+      }
+      ).catch(error => {
+        console.error(error);
+
+      });
       console.log('valid values: ' + name + '------- ' + email);
 
 
