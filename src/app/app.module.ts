@@ -42,6 +42,10 @@ import { ViewStudentsComponent } from './view-students/view-students.component';
         component: CreateStudentResourceComponent
       },
       {
+        path: 'students',
+        component: ViewStudentsComponent
+      },
+      {
         path: 'student',
         component: AddStudentComponent
       },

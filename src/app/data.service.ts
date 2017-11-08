@@ -13,11 +13,27 @@ export class DataService {
     constructor(private http: Http) { }
 
     /* studentUrl = 'http://localhost:8080/students';*/
-    private studentUrl = 'http://localhost:8080/resources';
-    private createResouceUrl = 'http://localhost:8080/student/resource';
-    private addStudentUrl = 'http://localhost:8080/student';
-  
+    private resourcesUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
+    private createResouceUrl = 'https://warm-ocean-18911.herokuapp.com/resource';
+    private addStudentUrl = 'https://warm-ocean-18911.herokuapp.com/student';
+    private studentsUrl = 'https://warm-ocean-18911.herokuapp.com/students';
+
     private headers = new Headers({'Content-Type': 'application/json'});
+
+    /**
+     * Pull data from sever.
+     * @returns Promise<Student[]>
+     */
+    getResourcesFromWeb(): Promise<Student[]> {
+
+        return this.http
+            .get(this.resourcesUrl)
+            .toPromise()
+            .then(res =>
+                res.json() as Student[])
+            .catch(this.errorHandler);
+
+    }
 
     /**
      * Pull data from sever.
@@ -26,7 +42,7 @@ export class DataService {
     getStudentsFromWeb(): Promise<Student[]> {
 
         return this.http
-            .get(this.studentUrl)
+            .get(this.studentsUrl)
             .toPromise()
             .then(res =>
                 res.json() as Student[])

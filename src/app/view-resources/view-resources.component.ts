@@ -66,7 +66,7 @@ export class ViewResourcesComponent implements OnInit {
   public getResourcesFromWeb(): void {
 
     this.tempStudents = this.dataService
-      .getStudentsFromWeb().then(data => {
+      .getResourcesFromWeb().then(data => {
         this.resources = data;
         data.forEach(element => {
           console.log(element);
