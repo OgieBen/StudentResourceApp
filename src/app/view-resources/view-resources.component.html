@@ -3,6 +3,32 @@
     <div class="screen">
 
 
+        
+		<div [class.show-modal]="showModal" (click)="toggleModalButton()" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 take-out modal-wrapper ">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-offset-3 no-padding modal-read dim-shadow no-offset">
+                    <p class="title-header">The Title: {{innerResourceTitle}}</p>
+    
+                    <div class="text-body">
+                        <p>
+                                    {{innerResourceBody}}
+                                Heroku’s HTTP Routing routes each request through a layer of reverse proxies which are, among other things, responsible for load balancing and terminating SSL connections. This means that requests received by a dyno will have the last router’s IP address in the REMOTE_ADDR environment variable, and the internal request will always be made using the HTTP protocol, even if the original request was made over HTTPS.
+                                Like most common load balancers or reverse proxies, Heroku provides the original request information in X-Forwarded-… headers (as documented here). Laravel uses components from the Symfony framework for HTTP request handling, and Symfony can easily be configured to trust such headers.
+                                Since Heroku sends all requests to an application through a load balancer first, and that load balancer always sets the headers (making it impossible for a client to forge their values), you can configure Laravel to treat the current remote addresses (which is the Heroku router) as a trusted proxy.
+                                You can use the fideloper/proxy package to automate this procedure. After following the installation instructions, you will need to slightly adjust the config/trustedproxy.php configuration file so that it trusts all proxy addresses.
+                                It is very important to also prevent Laravel from trusting the Forwarded and X-Forwarded-Host headers, because Heroku’s router does not set those, but Symfony’s Request component trusts them out of the box once a trusted proxy is set.
+                                The final configuration file should look like this:
+    
+                                Changing the log destination for production
+                                By default, Laravel will log errors and messages into a directory on disk, which isn’t ideal, because Heroku uses an ephemeral filesystem and treats logs as streams of events across all running dynos.
+                                In order to ensure that errors, should they arise, are visible in heroku logs, the corresponding configuration in config/app.php must be changed:
+    
+                        </p>
+    
+                    </div>
+                </div>
+    
+            </div>
+
         <div class="loader-position centralize-vertical centralize-content" [class.display-loader]="!loader">
 
             <i class="fa fa-spinner fa-spin" style="font-size:62px; color: #004;"></i>
@@ -31,7 +57,7 @@
                                 <!-- <div class="row"> -->
                                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 no-padding  ">
                                     <!-- <p class="col-xs-3 col-sm-3 col-md-3 col-lg-3  ">Author: Ogie Ben</p> -->
-                                    <img [src]="infoIcon" width="30" height="30" class="info-button " />
+                                    <img [src]="infoIcon" (click)="showResource(resource.title, resource.body)" width="30" height="30" class="info-button " />
                                     <img [src]="deleteIcon" width="30" height="30" class="delete-button " />
                                 </div>
 

@@ -19,6 +19,13 @@ export class ViewResourcesComponent implements OnInit {
   infoIcon: string;
 
 
+  private innerResourceTitle: string;
+  private innerResourceBody: string;
+
+  private showModal = false;
+
+  
+
 
   constructor(
     private dataService: DataService,
@@ -32,6 +39,23 @@ export class ViewResourcesComponent implements OnInit {
     this.getResourcesFromWeb();
   }
 
+  showResource(resourceTitle: string, resourceBody: string): void {
+    this.innerResourceTitle = resourceTitle;
+    this.innerResourceBody = resourceBody;
+
+    if (this.showModal) {
+      this.showModal = false;
+    } else {
+      this.showModal = true;
+    }
+
+
+  }
+
+
+  private toggleModalButton(): void{
+    this.showModal = false;
+  }
 
   /**
    * Get's data from @class data.service.ts

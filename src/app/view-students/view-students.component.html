@@ -22,17 +22,17 @@
 
         <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 detail-wrapper">
             <div class="row">
-                <div class="col-xs-9 col-sm-4 col-md-4 col-lg-2 dim-shadow detail-view" *ngFor="let resource of resources">
+                <div class="col-xs-9 col-sm-4 col-md-4 col-lg-2 dim-shadow detail-view" *ngFor="let student of students">
 
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-title-box">
-                        <p class="resource-title">{{resource.name}}</p>
+                        <p class="resource-title">{{student.name}}</p>
                     </div>
 
                     <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-bottom-box no-padding">
 
                         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 author-box no-padding">
 
-                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12  author-name">Author: Ogie Ben</p>
+                            <p class="col-xs-12 col-sm-12 col-md-12 col-lg-12  author-name">email: {{student.email}}</p>
 
                         </div>
 

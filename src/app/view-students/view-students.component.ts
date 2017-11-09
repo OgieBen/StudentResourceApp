@@ -11,7 +11,7 @@ import { Student } from '../student/student';
 export class ViewStudentsComponent implements OnInit {
 
 
-  resources: Student[];
+  students: Student[];
 
   tempStudents: any = [];
   loader = true;
@@ -37,12 +37,12 @@ export class ViewStudentsComponent implements OnInit {
 
     this.tempStudents = this.dataService
       .getStudentsFromWeb().then(data => {
-        this.resources = data;
+        this.students = data;
         this.loader = false;
         data.forEach(element => {
           console.log(element);
         });
-        console.log(this.resources);
+        console.log(this.students);
       });
 
   }

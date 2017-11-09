@@ -1,29 +1,81 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
 <div class="wrapper">
 
 	<div class="screen">
 
 
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 take-out modal-wrapper ">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-lg-offset-3 no-padding modal-read dim-shadow no-offset">
+				<p class="title-header">The Title: {{innerRosourceBody}}</p>
+
+				<div class="text-body">
+					<p>
+								{{innerRosourceBody}}
+							Heroku’s HTTP Routing routes each request through a layer of reverse proxies which are, among other things, responsible for load balancing and terminating SSL connections. This means that requests received by a dyno will have the last router’s IP address in the REMOTE_ADDR environment variable, and the internal request will always be made using the HTTP protocol, even if the original request was made over HTTPS.
+							Like most common load balancers or reverse proxies, Heroku provides the original request information in X-Forwarded-… headers (as documented here). Laravel uses components from the Symfony framework for HTTP request handling, and Symfony can easily be configured to trust such headers.
+							Since Heroku sends all requests to an application through a load balancer first, and that load balancer always sets the headers (making it impossible for a client to forge their values), you can configure Laravel to treat the current remote addresses (which is the Heroku router) as a trusted proxy.
+							You can use the fideloper/proxy package to automate this procedure. After following the installation instructions, you will need to slightly adjust the config/trustedproxy.php configuration file so that it trusts all proxy addresses.
+							It is very important to also prevent Laravel from trusting the Forwarded and X-Forwarded-Host headers, because Heroku’s router does not set those, but Symfony’s Request component trusts them out of the box once a trusted proxy is set.
+							The final configuration file should look like this:
+
+							Changing the log destination for production
+							By default, Laravel will log errors and messages into a directory on disk, which isn’t ideal, because Heroku uses an ephemeral filesystem and treats logs as streams of events across all running dynos.
+							In order to ensure that errors, should they arise, are visible in heroku logs, the corresponding configuration in config/app.php must be changed:
+
+					</p>
+
+				</div>
+			</div>
+
+		</div>
+
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 header shadow-raised">
 
-			<!-- <div class="container-fluid">
-				<div class="row"> -->
-					<div class=" col-xs-6 col-sm-6 col-md-6 col-lg-6 brand">
-				<p>Student Resource Track App</p>
-			</div>
-					<!-- <div class="col-xs-2 col-sm-6 col-md-6 col-lg-5 toggle-box">
-						<div class="col-xs-2 col-sm-12 col-md-12 col-lg-2 toggle">
+			<div class="container-fluid">
+				<div class="row">
+					<div class=" col-xs-2 col-sm-6 col-md-6 no-padding col-lg-6 brand">
+						<img class="take-out toggle-menu" (click)="toggleMenuButton()" [src]="menuIcon" width="40" height="40" />
+						<p>Student Resource Track App</p>
 
-						</div>
-					</div> -->
-				<!-- </div>
-			</div> -->
+
+					</div>
+
+
+
+				</div>
+			</div>
+		</div>
+
+
+		<div [class.show-stacked-menu]="menuToggle" class="take-out col-xs-12 col-md-12 no-padding  stacked-menu ">
+			<nav>
+				<ul>
+					<li>
+						<a routerLink='/resources'>View Resources</a>
+					</li>
+					<li>
+						<a routerLink='/resource'>Create Resource</a>
+					</li>
+					<li>
+						<a routerLink='/student'>Add a Student</a>
+					</li>
+					<li>
+						<a routerLink='/students'>View Students</a>
+					</li>
+
+
+
+
+				</ul>
+
+
+			</nav>
 		</div>
 
 
 
-		<div class=" no-toolbar col-xs-12 col-sm-12 col-md-12 col-lg-12  centralize-content nav-tab">
+
+		<div class="  no-toolbar col-xs-12 col-sm-12 col-md-12 col-lg-12  centralize-content nav-tab">
 			<nav>
 				<a routerLink='/resources'>View Resources</a>
 				<a routerLink='/resource'>Create Resource</a>
@@ -35,68 +87,6 @@
 
 		<router-outlet></router-outlet>
 
-
-		<!-- 
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content detail-container ">
-
-
-			<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 detail-wrapper">
-				<div class="row">
-
-					<div class="col-xs-9 col-sm-4 col-md-3 col-lg-2 dim-shadow detail-view">
-
-
-
-					</div>
-
-
-					<div class="col-xs-9 col-sm-4 col-md-3 col-lg-2 dim-shadow detail-view">
-
-					</div>
-
-
-					<div class="col-xs-9 col-sm-4 col-md-3 col-lg-2 dim-shadow detail-view-2">
-
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-title-box">
-							<p class="resource-title">Material Design</p>
-						</div>
-
-						<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-bottom-box no-padding">
-
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 author-box no-padding">
-
-								<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12  author-name">Author: Ogie Ben</p>
-
-							</div>
-
-						</div>
-
-
-					</div>
-					<div class="col-xs-9 col-sm-4 col-md-4 col-lg-2 dim-shadow detail-view">
-
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-title-box">
-							<p class="resource-title">Material Design</p>
-						</div>
-
-						<div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 resource-bottom-box no-padding">
-
-							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 author-box no-padding">
-
-								<p class="col-xs-12 col-sm-12 col-md-12 col-lg-12  author-name">Author: Ogie Ben</p>
-
-							</div>
-
-						</div>
-
-
-					</div>
-
-				</div>
-			</div> 
-
-
-		</div>-->
 
 	</div>
 </div>

@@ -16,19 +16,25 @@ import { ViewResourcesComponent } from './view-resources/view-resources.componen
 
 @Component({
   selector: 'app-root',
-   templateUrl: './app.component.html',
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
   students: Student[];
 
   tempStudents: any = [];
+  menuIcon: string;
+  menuToggle = false;
+
+  private innerResourceTitle: string;
+  private innerResourceBody: string;
 
 
 
   constructor(
     private dataService: DataService,
     private httpClient: HttpClient) {
+    this.menuIcon = "/assets/images/menu.png";
 
   }
 
@@ -54,5 +60,25 @@ export class AppComponent implements OnInit {
 
   }
 
+  showMenu(): void {
+
+    console.log('menu was clicked');
+  }
+
+  showResource(resourceTitle: string, resourceBody: string): void {
+     this.innerResourceTitle = resourceTitle;
+     this.innerResourceBody = resourceBody;
+  }
+
+  public toggleMenuButton(): void {
+
+    if (this.menuToggle) {
+      this.menuToggle = false;
+      console.log(this.menuToggle);
+    } else {
+      this.menuToggle = true;
+      console.log(this.menuToggle);
+    }
+  }
 
 }
