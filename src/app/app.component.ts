@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
   menuIcon: string;
   menuToggle = false;
 
-  private innerResourceTitle: string;
-  private innerResourceBody: string;
+   innerResourceTitle: string;
+   innerResourceBody: string;
 
 
 
@@ -56,6 +56,8 @@ export class AppComponent implements OnInit {
           console.log(element);
         });
         console.log(this.students);
+      }).catch(() => {
+        console.log('error loading data')
       });
 
   }
@@ -66,8 +68,8 @@ export class AppComponent implements OnInit {
   }
 
   showResource(resourceTitle: string, resourceBody: string): void {
-     this.innerResourceTitle = resourceTitle;
-     this.innerResourceBody = resourceBody;
+    this.innerResourceTitle = resourceTitle;
+    this.innerResourceBody = resourceBody;
   }
 
   public toggleMenuButton(): void {

@@ -12,13 +12,19 @@ export class DataService {
 
     constructor(private http: Http) { }
 
-    /* studentUrl = 'http://localhost:8080/students';*/
-    private resourcesUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
+    // private resourcesUrl = 'http://localhost:8080/resources';
+    //  private createResouceUrl = 'http://localhost:8080/student/resource';
+    //  private studentsUrl = 'http://localhost:8080/students';
+    private retrieveResourcesUrl = 'https://warm-ocean-18911.herokuapp.com/resources';
     private createResouceUrl = 'https://warm-ocean-18911.herokuapp.com/resource';
     private addStudentUrl = 'https://warm-ocean-18911.herokuapp.com/student';
-    private studentsUrl = 'https://warm-ocean-18911.herokuapp.com/students';
+    private retrieveStudentsUrl = 'https://warm-ocean-18911.herokuapp.com/students';
+    private  updateResourceUrl = 'https://warm-ocean-18911.herokuapp.com/update/resource/';
+    private deleteResourceUrl = 'https://warm-ocean-18911.herokuapp.com/delete/resource';
 
-    private headers = new Headers({'Content-Type': 'application/json'});
+
+
+    private headers = new Headers({ 'Content-Type': 'application/json' });
 
     /**
      * Pull data from sever.
@@ -27,7 +33,7 @@ export class DataService {
     getResourcesFromWeb(): Promise<Student[]> {
 
         return this.http
-            .get(this.resourcesUrl)
+            .get(this.retrieveResourcesUrl)
             .toPromise()
             .then(res =>
                 res.json() as Student[])
@@ -42,7 +48,7 @@ export class DataService {
     getStudentsFromWeb(): Promise<Student[]> {
 
         return this.http
-            .get(this.studentsUrl)
+            .get(this.retrieveStudentsUrl)
             .toPromise()
             .then(res =>
                 res.json() as Student[])
@@ -58,32 +64,60 @@ export class DataService {
      */
     private errorHandler(error: any): Promise<any> {
 
-     //   console.error('Error in service: ', error);
+        //   console.error('Error in service: ', error);
         console.log('Error in service: ', error);
 
-        return Promise.reject(error.message || error);
+        return Promise.reject(error.message || error + ' Error: Unable to reach server');
     }
 
 
 
     createResource(title: string, body: string): Promise<Resource> {
 
-      const payload: Resource = { title: title, body: body };
+        const payload: Resource = { title: title, body: body };
 
-      return  this.http
-            .post(this.createResouceUrl, JSON.stringify(payload), {headers: this.headers})
+        return this.http
+            .post(this.createResouceUrl, JSON.stringify(payload), { headers: this.headers })
             .toPromise()
             .then(res => res.json().data as Resource)
             .catch(this.errorHandler);
     }
 
     addStudent(name: string, email: string): Promise<Student> {
-    const payload: Student = { name: name, email: email };
+        const payload: Student = { name: name, email: email };
 
-              return  this.http
-                    .post(this.addStudentUrl, JSON.stringify(payload), {headers: this.headers})
-                    .toPromise()
-                    .then(res => res.json().data as Student)
-                    .catch(this.errorHandler);
+        return this.http
+            .post(this.addStudentUrl, JSON.stringify(payload), { headers: this.headers })
+            .toPromise()
+            .then(res => res.json().data as Student)
+            .catch(this.errorHandler);
     }
+
+    updateResource(key: string,  newText: string): Promise<any> {
+
+        const newBody = {'key': key, 'newBody': newText};
+        return this.http.post(this.updateResourceUrl, JSON.stringify(newBody), {headers: this.headers})
+        .toPromise()
+        .then((res) => {
+            const retrievedData =  res.json().data ;
+            console.log(retrievedData);
+            console.log('Update resouce was hit');
+        })
+        .catch(this.errorHandler);
+    }
+
+    deleteResource(key: string): Promise<any> {
+       const keyRef = {'key': key};
+
+        return this.http.post(this.deleteResourceUrl, JSON.stringify(keyRef), {headers: this.headers})
+        .toPromise()
+        .then((res) => {
+           const retrievedData = res.json().data;
+            console.log(retrievedData);
+            console.log('Data service was hit');
+        })
+        .catch(this.errorHandler);
+    }
+
+
 }

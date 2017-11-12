@@ -19,12 +19,16 @@ export class ViewResourcesComponent implements OnInit {
   infoIcon: string;
 
 
-  private innerResourceTitle: string;
-  private innerResourceBody: string;
+   innerResourceTitle: string;
+   innerResourceBody: string;
+   innerResourceKey: string;
+   updateIcon: string;
+   showModal = false;
+   showEditModal = false;
+   buttonLoader = true;
+   cardFlag = '';
+   updateInProgress = false;
 
-  private showModal = false;
-
-  
 
 
   constructor(
@@ -32,11 +36,29 @@ export class ViewResourcesComponent implements OnInit {
     private httpClient: HttpClient) {
     this.deleteIcon = '/assets/images/deleteIcon2.png';
     this.infoIcon = '/assets/images/infoIcon.png';
-
+    this.updateIcon = '/assets/images/edit_white.png';
   }
 
   ngOnInit() {
     this.getResourcesFromWeb();
+  }
+
+   toggleEditModalButton(): void {
+    this.showEditModal = false;
+  }
+
+   editResource(resourceKey: string, resourceTitle: string, resourceBody: string): void {
+
+    this.innerResourceTitle = resourceTitle;
+    this.innerResourceBody = resourceBody;
+    this.innerResourceKey = resourceKey;
+
+    if (this.showEditModal) {
+
+      this.showEditModal = false;
+    } else {
+      this.showEditModal = true;
+    }
   }
 
   showResource(resourceTitle: string, resourceBody: string): void {
@@ -52,9 +74,37 @@ export class ViewResourcesComponent implements OnInit {
 
   }
 
+  updateResource(key: string, body: string): void {
 
-  private toggleModalButton(): void{
+    this.updateInProgress = true;
+
+    console.log('clicked updateResource: ' + this.updateInProgress);
+    this.dataService.updateResource(key, body).then(() => {
+      this.updateInProgress = false;
+    }).catch(() => {
+      this.updateInProgress = false;
+    });
+
+  }
+
+
+   toggleModalButton(): void {
     this.showModal = false;
+  }
+
+ deleteResource(key: string): void {
+    console.log('key ' + key);
+
+    this.dataService.deleteResource(key)
+      .then((data) => {
+
+         this.cardFlag = key;
+        console.log(data)
+        if (data) {
+          console.log(data.msg);
+        }
+
+      });
   }
 
   /**

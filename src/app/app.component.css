@@ -33,6 +33,7 @@
 	background-color:transparent ;
 	float: left;
 
+
 }
 
 .screen {
@@ -68,7 +69,8 @@
 .header  .brand {
 	height: auto;
 //	background-color: darkcyan;
-    font-family: 'Saira Extra Condensed', sans-serif;
+	font-family: 'Saira Extra Condensed', sans-serif;
+
 
 }
 
@@ -288,6 +290,7 @@ margin: 20px;
 .stacked-menu > nav > ul {
 	float: left;
 	height: auto;
+	padding-top: 20px;
 	background-color: rgba(218, 212, 212, 0.3);
 
 }

@@ -12,9 +12,11 @@
           <!--  <p>Leader: {{innerTitle}} </p>          
           <p>classes: {{title.className}} </p>  -->
           <div class="col-xs-12 col-sm-11 col-md-11 col-lg-11 editor-wrapper dim-shadow">
-            <textarea #body name="body" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 editor " name="resource"></textarea>
+            <textarea [(ngModel)]="innerBody" #body name="body" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 editor " name="resource"></textarea>
           </div>
-          <button type="submit" class="col-xs-6 col-sm-6 col-md-4 col-lg-3 publish-button dim-shadow">Publish</button>
+          <button type="submit" [disabled]="loader" class="col-xs-6 col-sm-6 col-md-4 col-lg-3 publish-button dim-shadow">Publish
+              <i [class.display-loader]="!loader" class="fa fa-circle-o-notch fa-spin" style="font-size:24px; margin:6px; color: #fff;"></i>              
+          </button>
           <!--  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 centralize-content detail-container ">
           <div class=" col-xs-12 col-sm-12 col-md-6 col-lg-12 detail-wrapper">
 

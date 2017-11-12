@@ -65,13 +65,15 @@
 
 
 .header .brand {
-    height: 100%;
+	height: auto;
+	background-color: green;
     font-family: 'Saira Extra Condensed', sans-serif;
 
 }
 
 .header .brand > p {
 	text-align: left;
+	height: auto;
 	font-size: 20px;
 	padding: 25px;
 	color: white;
@@ -223,10 +225,14 @@
 	background-color: black;
 }
 
+
+
 .master-container > .master-view > ul {
 	float: left;
 	height: 50px;
 }
+
+
 
 
 .master-container > .master-view > ul > li {

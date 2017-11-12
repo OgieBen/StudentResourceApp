@@ -15,6 +15,7 @@ export class ViewStudentsComponent implements OnInit {
 
   tempStudents: any = [];
   loader = true;
+  
 
 
 
