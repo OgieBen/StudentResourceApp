@@ -239,13 +239,18 @@
 
 	height: 30px;
 	width: auto;
-	/*	background-color: orange;*/
-	float: left; //padding: 8px;
+	float: left;
 	list-style: none;
 }
 
 .master-container > .master-view > ul > li button {
 	margin: 4px;
+}
+
+.centralize-content {
+	align-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 
